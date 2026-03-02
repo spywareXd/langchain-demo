@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8169682f-bdb1-4b16-a2d2-3d3f14461451" name="Changes" comment="branch commit">
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2_agent_loop_raw.py" beforeDir="false" afterPath="$PROJECT_DIR$/2_agent_loop_raw.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +36,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.1_agent_loop_tool_calling.executor": "Run",
     "Python.2_agent_loop_raw.executor": "Run",
+    "Python.3_raw_reAct prompting.executor": "Run",
     "Python._base_client.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -73,7 +74,8 @@
       <workItem from="1772189378105" duration="21846000" />
       <workItem from="1772304208958" duration="5803000" />
       <workItem from="1772357293284" duration="34719000" />
-      <workItem from="1772443224076" duration="11679000" />
+      <workItem from="1772443224076" duration="11714000" />
+      <workItem from="1772482411317" duration="7902000" />
     </task>
     <task id="LOCAL-00001" summary="branch commit">
       <option name="closed" value="true" />
@@ -98,5 +100,6 @@
     <SUITE FILE_PATH="coverage/langchain_course$main.coverage" NAME="main Coverage Results" MODIFIED="1772385899945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/langchain_course$1_agent_loop_tool_calling.coverage" NAME="1_agent_loop_tool_calling Coverage Results" MODIFIED="1772451271257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/langchain_course$2_agent_loop_raw.coverage" NAME="2_agent_loop_raw Coverage Results" MODIFIED="1772453549102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/langchain_course$3_raw_reAct_prompting.coverage" NAME="3_raw_reAct prompting Coverage Results" MODIFIED="1772490766081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv" />
   </component>
 </project>
