@@ -92,6 +92,14 @@ def apply_discount(price : float, discount_tier: str) -> float:
     return round(price*(1 - discount/100),2)
 
 
+@traceable(name="Gemini LLM Call", run_type="llm")
+def gemini_generate(client, model, contents, config):
+    resp = client.models.generate_content(
+        model=model,
+        contents=contents,
+        config=config,
+    )
+    return resp
 
 
 
@@ -129,11 +137,7 @@ def run_agent(query:str ):
     for iteration in range(1, MAX_ITERATIONS+1):
         print(f"--- Iteration: {iteration} ---")
         #run llm
-        response = client.models.generate_content(
-            model=MODEL,
-            contents=contents,
-            config=config,
-        )
+        response = gemini_generate(client, MODEL, contents, config)
 
         #tool_call field replaced by function_call
         # If model is done, it will return no function_calls and you can use response.text
