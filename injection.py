@@ -14,11 +14,11 @@ from langchain_pinecone import PineconeVectorStore
 
 if __name__ == "__main__":
     print("Hello from langchain-course!")
-    loader = TextLoader("blog.txt", encoding="utf-8")
+    loader = TextLoader("plant.txt", encoding="utf-8")
     document = loader.load()  # this creates a document object (content, metadata)
 
     print("splitting....")
-    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=50)  #define function attributes
+    text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=10)  #define function attributes
     texts= text_splitter.split_documents(document)
     print(f"No. of chunks: {len(texts)}")
 

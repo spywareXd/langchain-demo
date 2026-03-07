@@ -76,7 +76,7 @@ def rag_with_lcel():
 
 
 if __name__=="__main__":
-    query="How do vector databases handle massive load?"
+    query="How is venus fly trap prey processed in the plant?"
     llm = ChatGoogleGenerativeAI(model="gemini-flash-latest")
     #NO RAG
     print("=" * 40)
