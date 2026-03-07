@@ -11,6 +11,7 @@ from langchain_pinecone import PineconeVectorStore
 
 
 
+
 if __name__ == "__main__":
     print("Hello from langchain-course!")
     loader = TextLoader("blog.txt", encoding="utf-8")

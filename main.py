@@ -6,6 +6,11 @@ from langchain.messages import HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 
+#lcel:
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from operator import itemgetter
+
 
 #initialize embeddings and pinecone object
 embeddings=GoogleGenerativeAIEmbeddings(model="gemini-embedding-001", output_dimensionality=1536)
@@ -51,13 +56,52 @@ def rag_without_lcel(query: str):
 
 
 
+#better approach with LCEL:
+def rag_with_lcel():
+
+    llm=ChatGoogleGenerativeAI(model="gemini-flash-latest")
+    retrieval_chain = (
+            RunnablePassthrough.assign(
+                context=itemgetter("question") | retriever | format_document
+            )
+            | prompt_template
+            | llm
+            | StrOutputParser()
+    )
+    return retrieval_chain
+
+
+
+
+
+
 if __name__=="__main__":
     query="How do vector databases handle massive load?"
+    llm = ChatGoogleGenerativeAI(model="gemini-flash-latest")
+    #NO RAG
+    print("=" * 40)
+    print("No RAG")
+    print("\nAnswer: ")
+    result_raw = llm.invoke([HumanMessage(content=query)])
+    print(result_raw.content[0].get("text"))
+    print("=" * 40)
 
+
+    #NO LCEL
     print("=" * 40)
     print("RAG without LCEL")
-    print("=" * 40)
     print("\nAnswer: ")
     print(rag_without_lcel(query)[0].get('text'))
+    print("=" * 40)
+
+
+    #WITH LCEL
+    print("=" * 40)
+    print("RAG with LCEL")
+    print("\nAnswer: ")
+    runnable_chain=rag_with_lcel()
+    result_lcel=runnable_chain.invoke({"question": query})
+    print(result_lcel)
+    print("=" * 40)
 
 
